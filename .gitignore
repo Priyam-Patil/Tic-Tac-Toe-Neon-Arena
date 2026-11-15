@@ -1,0 +1,45 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.DS_Store
+
+# Environment values and service-local authentication state
+.env
+.env.*
+!.env.example
+*.local
+.vercel/
+.netlify/
+.npmrc
+.yarnrc.yml
+credentials.json
+service-account*.json
+*service_account*.json
+
+# Private keys and certificates (public application assets remain tracked)
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa*
+id_ed25519*
+
+# Generated local data, logs, caches, and editor state
+*.log
+logs/
+tmp/
+temp/
+.cache/
+.vite/
+.vitest/
+output/
+.codex/
+.agents/
+.vscode/
+.idea/
+Thumbs.db
+*.tmp
+*.bak
+*.swp

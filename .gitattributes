@@ -1,0 +1,12 @@
+* text=auto eol=lf
+
+# Never normalize generated documents or image bytes as text.
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
