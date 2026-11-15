@@ -23,7 +23,7 @@ Online multiplayer, leaderboards, achievements, daily challenges, a service work
 
 ### Release status
 
-Local checks and the production build are complete. GitHub publication and Vercel deployment are awaiting explicit owner approval. The repository already exists and was empty when inspected. No live website URL is available yet. The PDF and release documentation will be updated after a deployment has actually succeeded and been verified.
+Local checks and the production build are complete. The owner approved publication and production deployment. Release commit 97b35647ba1097289e8088f028e133fe1307d98a was pushed to main in the existing repository; the GitHub API confirmed its files and commit. Vercel project creation was rejected because its GitHub integration lacks repository access. The owner must grant the Vercel GitHub App access to this repository. No live website URL exists yet; it will be added after deployment succeeds and is verified.
 
 ## 2. Technology stack
 
@@ -42,7 +42,7 @@ Local checks and the production build are complete. GitHub publication and Verce
 | Node.js built-ins | Credential-pattern scanning and HTTP/static-asset/security-header verification scripts. |
 | Python / ReportLab / Poppler | Project-documentation PDF generation, text checks, and visual page rendering. These are documentation tools, not browser runtime dependencies. |
 
-The exact JavaScript dependency versions are recorded in package-lock.json. GitHub hosts the source after approval; Vercel is the selected static hosting target. There is no React Router dependency: navigation is local React state inside App.tsx.
+The exact JavaScript dependency versions are recorded in package-lock.json. GitHub hosts the published source; Vercel is the selected static hosting target. There is no React Router dependency: navigation is local React state inside App.tsx.
 
 ## 3. Project folder structure
 
@@ -244,8 +244,8 @@ The following table distinguishes fresh automated results, executed browser chec
 | Dependency audit | npm audit --json | No known advisories | 0 vulnerabilities reported | Pass |
 | Credential patterns | Worktree, staged index and local history scan | No credential signatures in release | No matches in inspected publishable files | Pass |
 | Physical touch/audio | Physical phones, speakers and Safari | Consistent device behavior | Hardware/browser matrix unavailable | Not tested |
-| GitHub push | Push only after explicit approval | Commit appears in existing repository | Not pushed before approval | Pending |
-| Vercel / live UI | Deploy then test actual URL | Live assets and gameplay work | Approval required; no live URL yet | Pending |
+| GitHub push | Push after explicit approval; inspect GitHub API | Commit appears in existing repository | Release 97b3564 and files confirmed on main | Pass |
+| Vercel / live UI | Create linked project, then deploy and test | Live assets and gameplay work | API rejected missing GitHub integration access; no live URL | Blocked |
 
 The fresh automated suite contains 59 passing tests across five files. The final report records exact limitations. Credential scanning is a defense-in-depth pattern check, not proof that every possible secret format is detectable.
 
@@ -269,15 +269,15 @@ The only target repository is [Priyam-Patil/Tic-Tac-Toe-Neon-Arena](https://gith
 
 Because the OneDrive checkout could not create Git lock files, its existing metadata was copied into a writable synchronized checkout. The commit is prepared there, with only reviewed application source, tests, safe configuration, scripts, screenshots, and documentation. No force push or history rewrite is planned.
 
-Before publication, review the staged file list, security report, and commit summary. The requested approval is separate from account authorization. GitHub push remains pending until approval, even when credentials are available.
+The staged file list, clean worktree, security report, tests, and build were checked before publication. After explicit owner approval, the release commit was pushed normally to main without force-pushing or creating another repository. The GitHub API confirmed commit 97b3564 and the published package manifest.
 
 ### Vercel configuration
 
 Project root is the folder containing package.json. Framework is Vite, installation uses npm ci, build command is npm run build, and output directory is dist. vercel.json records the build/output settings and response headers. No environment variables or backend are needed.
 
-Vercel account access and the target team scope are now authorized. A read-only lookup found no matching project linked to this repository. Passwords or tokens were not requested in chat. Project creation and deployment remain pending explicit owner approval.
+Vercel account access, the target team scope, and production deployment are authorized. A read-only lookup found no matching project. Creating a Vite project linked to the existing repository returned a missing GitHub integration access error. The signed-in import page confirms that this repository is unavailable and offers Configure GitHub App. The owner must select this repository in that App's permissions. Passwords or tokens were not requested in chat.
 
-After approval and access: push the prepared commit to the existing repository, verify the remote commit, identify or create the corresponding Vercel project, deploy the approved revision, wait for a successful terminal deployment state, and test its real URL. Only then add the live link to the README/PDF. If deployment configuration changes are needed, explain them and request redeployment approval as instructed.
+After GitHub App access is granted: identify or create the corresponding Vercel project, deploy the approved revision, wait for a successful terminal deployment state, and test its real URL. Only then add the live link to the README/PDF and push the updated documentation. The owner has already authorized these publication and deployment actions.
 
 ### Future updates
 
@@ -299,12 +299,12 @@ Tailwind's reset originally affected native dialog centering; explicit margin:au
 
 ### Honest release evidence
 
-Development-mode reduced-motion notices are distinguished from runtime errors. Tests, screenshots, audit results, and production asset checks are recorded as executed evidence. Authentication and publication are recorded as pending instead of inventing a successful push, deployment, live URL, or physical-device result.
+Development-mode reduced-motion notices are distinguished from runtime errors. Tests, screenshots, audit results, and local production asset checks are recorded as executed evidence. GitHub publication is verified; the Vercel GitHub App access blocker is recorded explicitly instead of inventing a live URL or physical-device result.
 
 ## 12. Conclusion and future improvements
 
 Neon Arena is a complete local Tic Tac Toe application with correct rules, optimal Hard AI, working controls, a polished two-theme interface, persistent statistics, and useful replays. The final local build and automated checks pass. Security preparation now covers ignored private files, credential patterns, dependencies, and production response headers.
 
-The remaining release steps are explicit approval, GitHub push, Vercel project creation/deployment, live-site verification, and replacement of the pending live-link status with the verified URL. This documentation deliberately preserves that distinction.
+GitHub publication is verified. The remaining release steps are granting Vercel GitHub App repository access, project creation and production deployment, live-site verification, and adding the verified live URL to the documentation. Deployment approval has already been provided and need not be requested again.
 
 Practical future improvements include real-device accessibility testing, a broader browser matrix, and a full ESLint setup if ongoing maintenance warrants it. Online play or cloud statistics would require a genuine networking/backend design and should not be advertised until implemented. These are future possibilities, not current features.

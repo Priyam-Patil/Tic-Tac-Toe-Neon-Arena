@@ -106,7 +106,7 @@ def page_decoration(canvas, doc):
     canvas.line(50, 43, 545, 43)
     canvas.setFont('ArenaSans', 8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(50, 29, 'Verified local release | GitHub push and Vercel deployment require approval')
+    canvas.drawString(50, 29, 'GitHub release verified | Vercel repository access required')
     canvas.drawRightString(545, 29, str(doc.page))
     canvas.restoreState()
 
@@ -119,10 +119,10 @@ def build():
              Paragraph('React Web Application', styles['CoverSub']),
              Paragraph('Author: <b>Priyam Patil</b><br/>Release verification: 15 November 2026', styles['BodyDoc']),
              Spacer(1, 18), Paragraph('<b>GitHub repository</b><br/><a href="https://github.com/Priyam-Patil/Tic-Tac-Toe-Neon-Arena" color="#4963db">github.com/Priyam-Patil/Tic-Tac-Toe-Neon-Arena</a>', styles['BodyDoc']),
-             Paragraph('<b>Live website</b><br/>Not deployed - awaiting owner approval. No live URL has been invented.', styles['BodyDoc']),
+             Paragraph('<b>Live website</b><br/>Deployment approved; blocked by Vercel GitHub App repository access. No live URL exists yet.', styles['BodyDoc']),
              Spacer(1, 25), Paragraph('A compact game. A complete engineering story.', styles['CoverSub']),
              Paragraph('Rules, intelligent AI, interface design, persistence, accessibility, production verification, security, and publication handoff - documented from the actual source.', styles['BodyDoc']),
-             Spacer(1, 20), Paragraph('<b>Publication status:</b> local verification complete; repository push and Vercel deployment are pending explicit approval. This PDF will be updated with the real live URL after deployment is verified.', styles['BodyDoc']), PageBreak()]
+             Spacer(1, 20), Paragraph('<b>Publication status:</b> release 97b3564 is pushed and confirmed on GitHub. All 59 tests and the production build pass. Vercel needs GitHub App access to this repository before deployment can proceed. This PDF will receive the real live URL after verification.', styles['BodyDoc']), PageBreak()]
     sections = [clean(line[3:]) for line in lines if line.startswith('## ')]
     story.append(Paragraph('Contents', styles['H1Doc']))
     for item in sections:

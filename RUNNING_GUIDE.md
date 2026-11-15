@@ -96,7 +96,7 @@ https://github.com/Priyam-Patil/Tic-Tac-Toe-Neon-Arena
 
 In Vercel import the repository or reuse the matching existing project. Root is the package.json directory, framework is Vite, install is npm ci, build is npm run build, and output is dist. No environment variables or backend credentials are required. vercel.json contains those settings and security headers.
 
-Wait for the build to succeed, open the actual URL, and verify assets and gameplay before reporting completion. The current release documentation explicitly records publication/deployment as pending until those actions occur.
+Wait for the build to succeed, open the actual URL, and verify assets and gameplay before reporting completion. GitHub publication is verified. Production deployment is approved and currently blocked by Vercel GitHub App repository access; use Configure GitHub App in Vercel and select this repository. The live link will be recorded after successful deployment and verification.
 
 ## Complete technical documentation
 

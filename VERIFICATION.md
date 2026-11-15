@@ -19,7 +19,7 @@ Expanded private-file ignore rules; added same-origin CSP and security headers m
 
 Existing repository: https://github.com/Priyam-Patil/Tic-Tac-Toe-Neon-Arena
 
-GitHub and Vercel team access are authorized. The repository was empty at the last read-only check; no matching Vercel project was found. Push and deployment await explicit owner approval. No live URL exists yet.
+The owner explicitly approved GitHub publication and Vercel production deployment. Commit 97b35647ba1097289e8088f028e133fe1307d98a was pushed to main and its files were confirmed through the GitHub API. The clean index and all local history passed the secret-pattern scan (0 findings). Vercel rejected project creation because its GitHub integration does not have access to this repository. Its import page also reports the repository unavailable and offers Configure GitHub App. The account owner must grant that App access to this repository; no live URL exists yet.
 
 OneDrive prevented Git/Node writes, so a synchronized writable checkout is used to prepare the commit. Verified source and artifacts are copied to the requested project.
 

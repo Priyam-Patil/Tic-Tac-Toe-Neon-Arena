@@ -4,7 +4,7 @@ A colorful, browser-local Tic Tac Toe application by **Priyam Patil**, with inte
 
 [GitHub repository](https://github.com/Priyam-Patil/Tic-Tac-Toe-Neon-Arena) | [Running guide](RUNNING_GUIDE.md) | [Project documentation](docs/PROJECT_DOCUMENTATION.md) | [Verification](VERIFICATION.md)
 
-**Release status:** verified locally; GitHub push and Vercel deployment are awaiting owner approval. A live URL will be added only after deployment succeeds.
+**Release status:** 59 tests and the production build pass. The approved release is published on GitHub (commit 97b3564). Vercel deployment is approved but blocked until its GitHub App is granted access to this repository. A live URL will be added after deployment succeeds and is verified.
 
 ![Neon Arena light theme](docs/screenshots/light-desktop.jpg)
 
